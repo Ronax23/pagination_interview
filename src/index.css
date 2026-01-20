@@ -1,0 +1,26 @@
+
+table{
+  border-spacing: 0 20px;
+  overflow-x: scroll;
+}
+table tr{
+  margin: 20px 0;
+}
+table thead{
+  text-transform: uppercase;
+  text-align: left;
+  padding: 20px;
+}
+button{
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  color: white;
+  background-color: bisque;
+  transition-duration: .3s;
+  border-radius: 100px;
+}
+button:hover
+{
+  background-color: beige;
+}
