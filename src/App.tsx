@@ -5,11 +5,26 @@ import axios from 'axios';
 
 import { Paginator } from 'primereact/paginator';
         
-
+interface TypeId {
+    id: number;
+    title: string;
+    place_of_origin: string;
+    artist_display: string;
+    inscriptions: string;
+    date_start: number;
+    date_end: number;
+}
+interface ApiType {
+    pagination: {
+        total: number;
+        total_pages: number;
+    };
+    data: Artwork[];
+}
 function App() {
-    const [product,setproduct]=useState({data:[],pagination:{}});
+    const [product,setproduct]=useState<ApiType>({data:[],pagination:{}});
     const [first, setFirst] = useState(0);
-    const [rows, setRows] = useState(11);
+    const [rows, setRows] = useState(12);
     const [check,setcheck]=useState([]);
     let page:number;
   const apidat=()=>{
