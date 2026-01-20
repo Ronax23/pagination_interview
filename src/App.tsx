@@ -19,13 +19,13 @@ interface ApiType {
         total: number;
         total_pages: number;
     };
-    data: Artwork[];
+    data: TypeId[];
 }
 function App() {
     const [product,setproduct]=useState<ApiType>({data:[],pagination:{}});
     const [first, setFirst] = useState(0);
     const [rows, setRows] = useState(12);
-    const [check,setcheck]=useState([]);
+    const [check,setcheck]=useState<TypeId>([]);
     let page:number;
   const apidat=()=>{
     page= first/rows + 1
@@ -35,7 +35,7 @@ function App() {
   { apidat()} ,[first])
 
 
-    const onPageChange = (event) => {
+    const onPageChange = (event:PaginatorPageChangeEvent) => {
         setFirst(event.first);
         setRows(event.rows);
     };
